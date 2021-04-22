@@ -4,9 +4,8 @@ import numpy as np
 
 GPIO.setmode(GPIO.BCM)
 #GPIO.setup(channel, GPIO.OUT)
-chan_list = [21, 20, 16, 12, 7, 8, 25, 24]    # add as many channels as you want!
-                       # you can tuples instead i.e.:
-                       #   chan_list = (11,12)
+chan_list = [21, 20, 16, 12, 7, 8, 25, 24]   
+                      
 #GPIO.setup(chan_list, GPIO.OUT)
 for i in chan_list:
     GPIO.setup(i, GPIO.OUT)
@@ -102,6 +101,7 @@ def move_array(arr, direction, steps):
     print(array)
     return array
 ##################################################################################
+##################################################################################
 def SlowMotion(ledNumber, count):
     p = GPIO.PWM(chan_list[7 - ledNumber], 50)
     p.start(0)
@@ -115,7 +115,7 @@ def SlowMotion(ledNumber, count):
 
     p.stop()
 ##################################################################################
-
+##################################################################################
 
 SlowMotion(3, 2)
 #runningPattern(6, 1)
