@@ -62,6 +62,16 @@ def lightNumber(number):
     time.sleep(3)
     for i in chan_list:
         GPIO.output(i, 0)
+
+
+def lightNumber(number):
+    GPIO.output (chan_list, 0)
+    registers = decToBinList(number)
+    for j in range(8):
+        if (registers[7 - j] == 1):
+            GPIO.output (chan_list[j], 1)
+            GPIO.cleanup(chan_list)
+
 ############################################################################
 ############################################################################
 def runningPattern(pattern, direction):
